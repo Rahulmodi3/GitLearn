@@ -18,4 +18,15 @@ pipeline {
             }
         }
     }
+    
+    post { 
+        always { 
+            emailext body: '''$DEFAULT_CONTENT
+
+            Note : Do not reply to this mail
+
+            Thanks 
+            Automation Team''', subject: 'UI Test Result $DEFAULT_SUBJECT', to: 'lasthostel64@gmail.com'
+        }
+    }
 }
