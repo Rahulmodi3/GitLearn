@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                bat 'python Pages\\LoginPage.py'
             }
         }
         stage('Deploy') {
