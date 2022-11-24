@@ -21,12 +21,13 @@ pipeline {
     
     post { 
         always { 
-            emailext body: '''<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}
+            emailext body: '''<b>Example</b>
+            <br>$DEFAULT_CONTENT
 
             <br> Note : Do not reply to this mail
-
-            Thanks 
-            Automation Team''', subject: 'UI Test Result $DEFAULT_SUBJECT', to: 'lasthostel64@gmail.com'
+            <br>
+            <br>Thanks 
+            <br>Automation Team''', subject: 'UI Test Result $DEFAULT_SUBJECT', to: 'lasthostel64@gmail.com'
         }
     }
 }
